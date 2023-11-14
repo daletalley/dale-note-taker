@@ -28,3 +28,10 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
   // Add a new note to db.json
 });
+app.get('/api/notes', (req, res) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+      if (err) throw err;
+      res.json(JSON.parse(data));
+    });
+  });
+  
