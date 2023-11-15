@@ -19,7 +19,32 @@ function createNewNote(body, notesArray) {
 
     return note;
 }
+//function to delete a note
+function deleteNote(notesArray, id) {
+    let deleteID = parseInt(id);
+
+    // Find the note to delete based on its ID
+    const deleteIndex = notesArray.findIndex((note) => note.id === id);
+
+    if (deleteIndex !== -1) {
+        notesArray.splice(deleteIndex, 1);
+
+        // Update the IDs for the notes left
+        for (let i = deleteIndex; i < notesArray.length; i++) {
+            notesArray[i].id = UUID();
+        }
+        //write to json file
+        fs.writeFileSync(
+            path.join(__dirname, '../db/db.json'),
+            JSON.stringify({
+                notes: notesArray
+            }, null, 2)
+        );
+    }
+}
+
 
 module.exports = {
-    createNewNote
+    createNewNote,
+    deleteNote
 };
