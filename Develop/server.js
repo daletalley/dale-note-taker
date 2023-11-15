@@ -1,54 +1,31 @@
 const express = require('express');
-const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 3030;
+const fs = require('fs');
+const PORT = process.env.PORT || 3001;
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+const path = require('path');
+// const uuid  = require('uuid');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+// Import and use your route files (apiRoutes.js and htmlRoutes.js).
+app.use('/apiRoutes', apiRoutes);
+app.use('/htmlRoutes', htmlRoutes);
+
+
+
+app.get('/notes', (req, res)=>
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
+);
+
+
+app.get("*", (req,res)=>{
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+})
+
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`App listening on PORT ${PORT}`);
 });
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/Develop/public/notes.html'));
-  });
-  
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/Develop/public/index.html'));
-  });
-  const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
-
-app.get('/api/notes', (req, res) => {
-  // Read db.json and return all notes
-});
-
-app.post('/api/notes', (req, res) => {
-  // Add a new note to db.json
-});
-app.get('/api/notes', (req, res) => {
-    fs.readFile('Develop/db/db.json', 'utf8', (err, data) => {
-      if (err) throw err;
-      res.json(JSON.parse(data));
-    });
-  });
-  app.post('/api/notes', (req, res) => {
-    const newNote = { ...req.body, id: uuidv4() };
-  
-    fs.readFile('/Develop/db/db.json', 'utf8', (err, data) => {
-      if (err) throw err;
-      const notes = JSON.parse(data);
-      notes.push(newNote);
-  
-      fs.writeFile('/Develop/db/db.json', JSON.stringify(notes), (err) => {
-        if (err) throw err;
-        res.json(newNote);
-      });
-    });
-  });
-  app.delete('/api/notes/:id', (req, res) => {
-    // Delete the note with the given id
-  });
-  
