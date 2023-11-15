@@ -1,7 +1,7 @@
 //imports
 const fs = require("fs");
 const path = require("path");
-const UUID = require('../helpers/uuid');
+const UUID = require('/Develop/helpers/uuid.js');
 
 //function to create new note to database
 function createNewNote(body, notesArray) {
@@ -11,7 +11,7 @@ function createNewNote(body, notesArray) {
     notesArray.push(note);
     //write to json file
     fs.writeFileSync(
-        path.join(__dirname, '../db/db.json'),
+        path.join(__dirname, '/Develop/db/db.json'),
         JSON.stringify({
             notes: notesArray
         }, null, 2)
@@ -35,7 +35,7 @@ function deleteNote(notesArray, id) {
         }
         //write to json file
         fs.writeFileSync(
-            path.join(__dirname, '../db/db.json'),
+            path.join(__dirname, '/Develop/db/db.json'),
             JSON.stringify({
                 notes: notesArray
             }, null, 2)
