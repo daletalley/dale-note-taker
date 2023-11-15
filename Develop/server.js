@@ -12,11 +12,11 @@ app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/notes.html'));
+    res.sendFile(path.join(__dirname, '/Develop/public/notes.html'));
   });
   
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.sendFile(path.join(__dirname, '/Develop/public/index.html'));
   });
   const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
@@ -29,7 +29,7 @@ app.post('/api/notes', (req, res) => {
   // Add a new note to db.json
 });
 app.get('/api/notes', (req, res) => {
-    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    fs.readFile('Develop/db/db.json', 'utf8', (err, data) => {
       if (err) throw err;
       res.json(JSON.parse(data));
     });
@@ -37,12 +37,12 @@ app.get('/api/notes', (req, res) => {
   app.post('/api/notes', (req, res) => {
     const newNote = { ...req.body, id: uuidv4() };
   
-    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    fs.readFile('/Develop/db/db.json', 'utf8', (err, data) => {
       if (err) throw err;
       const notes = JSON.parse(data);
       notes.push(newNote);
   
-      fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
+      fs.writeFile('/Develop/db/db.json', JSON.stringify(notes), (err) => {
         if (err) throw err;
         res.json(newNote);
       });
