@@ -19,3 +19,7 @@ function createNewNote(body, notesArray) {
 
     return note;
 }
+
+module.exports = {
+    createNewNote
+};
