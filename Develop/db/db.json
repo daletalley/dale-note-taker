@@ -1,12 +1,17 @@
 [
   {
-    "title": "dddd",
-    "text": "dddd",
-    "id": "15bc2cfe-5ad5-4b49-ae03-45236641d2ed"
+    "title": "Dinner",
+    "text": "Make dinner reservations for Friday",
+    "id": "53e6e0b2-1b42-401e-a6bc-3a2b3e2877fe"
   },
   {
-    "title": "dd",
-    "text": "dd",
-    "id": "77d3475d-1543-4e17-b794-bd05c3a97dcf"
+    "title": "Grocery list",
+    "text": "apples\ncarrots\nmilk\neggs",
+    "id": "83eddcfe-65ce-4987-a3b0-a67d571d5701"
+  },
+  {
+    "title": "Exercise",
+    "text": "Maybe I should go on a run today after I pick up the kids",
+    "id": "9f45744b-e021-47ec-a998-9561f3511c9d"
   }
 ]
