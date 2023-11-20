@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const PORT = process.env.PORT || 3003;
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./Develop/routes/apiRoutes');
+const htmlRoutes = require('./Develop/routes/htmlRoutes');
 const path = require('path');
 const uuid  = require('uuid');
 
