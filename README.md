@@ -43,7 +43,7 @@ The back end of the application consists of:
 
 ## Deployed Application
 
-Access the live application hosted on Heroku [here](#).
+Access the live application hosted on Heroku [here](https://dale-note-taker-cde1e4f7af68.herokuapp.com/).
 
 ## Video Submission
 
