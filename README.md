@@ -22,7 +22,7 @@ To use the Note Taker app, follow these steps:
 
 ## Front End
 
-Features of the front-end include:
+Features of the front end include:
 
 - A landing page directing to the notes interface.
 - An interactive note-taking section to write and view notes.
@@ -46,7 +46,7 @@ The back end of the application consists of:
 Access the live application hosted on Heroku [here](https://dale-note-taker-cde1e4f7af68.herokuapp.com/).
 
 ## Screenshots
-[here](<img width="1710" alt="Screenshot 2023-11-20 at 12 31 18 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/99f86970-e841-493c-a99c-e059d2440e5d">
+<img width="1710" alt="Screenshot 2023-11-20 at 12 31 18 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/99f86970-e841-493c-a99c-e059d2440e5d">
 <img width="1710" alt="Screenshot 2023-11-20 at 12 31 10 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/93e4a3b9-50f5-42f3-827d-2caea5cfcdea">
 <img width="1710" alt="Screenshot 2023-11-20 at 12 30 59 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/d648d854-f854-40ca-995b-f822447ee2dc">
-<img width="1710" alt="Screenshot 2023-11-20 at 12 30 52 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/ee020e83-b4c9-4294-9897-14f2ed387605">)
+<img width="1710" alt="Screenshot 2023-11-20 at 12 30 52 AM" src="https://github.com/daletalley/dale-note-taker/assets/134656450/ee020e83-b4c9-4294-9897-14f2ed387605">
